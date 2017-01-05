@@ -1,0 +1,26 @@
+<header class="intro-header" id="map-header">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Carte</h1>
+                    <hr class="small">
+                    <span class="subheading">Nos découvertes</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="row no-marginR no-marginL">
+  <div class="col-md-12" id="gmap"></div>
+</div>
+
+<script type = 'text/javascript'>
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {scrollwheel: false}, internal: {id: 'gmap'}}, function(){
+      markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+</script>

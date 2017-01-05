@@ -5,7 +5,7 @@
                 <div class="site-heading custom-heading">
                     <h1 class="article-title"><%= @article.title %></h1>
                     <hr class="small">
-                    <span class="subheading "><%= @article.created_at.strftime("%F %T") %></span>
+                    <span class="subheading "><%= @article.created_at.strftime("%F") %></span>
                 </div>
             </div>
         </div>
@@ -17,12 +17,41 @@
 </style>
 
 <div class="row article-body">
-	<div class="col-md-7 col-md-offset-1">
+	<div class="col-md-11 col-md-offset-1">
 		<%= raw(@article.body) %>
 	</div>
-    <div class="col-md-3 paddingX">
-      carte
+</div>
+
+<div class="row">
+    <div class="col-md-12 article-map">
+        <div id="article-gmap">
+        </div>
     </div>
 </div>
 
-<%= render 'comments/commentList', review: Comment.new(article_id: @article.id) %>
+<div class="row commentList dark-bg">
+  <div class="col-md-11 col-md-offset-1">
+    <h3 class="commentTitle">Commentaires</h3>
+    <%= render 'comments/create', review: Comment.new() %>
+  </div>
+  <div class="row paddingL15" id="comments">
+    <% @comments.each do |comment| %>
+      <div class="row no-marginL no-marginR paddingL15">
+        <div class="col-xs-6 col-md-offset-1 comment-card ">
+          <h4><%= comment.author %>&nbsp;<small><%= comment.created_at.strftime("%F %T") %></small></h4>
+          <p class="comment-text"><%= comment.body %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script type = 'text/javascript'>
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: { scrollwheel: false }, internal: {id: 'article-gmap'}}, function(){
+      markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  handler.getMap().setZoom(10);
+  });
+</script>

@@ -13,9 +13,36 @@
  *= require_self
  */
 
+.article-img{
+  height:250px;
+}
+
+.article-map{
+    padding-right: 0px;
+}
+
+#article-gmap{
+  height:300px;
+  width:100%;
+
+}
+
+.current-page{
+  text-decoration:underline;
+}
+
+#gmap{
+  height:600px;
+  width:100%;
+}
+
+#map-header{
+    background-image: url(asset-path('nz-mask.jpg'));
+}
+
 .comment-heading{
     max-height: 400px;
-    padding:  250px 0 !important;
+    padding:  200px 0 !important;
 }
 
 #comments{
@@ -132,6 +159,7 @@
     font-size: 2.2rem;
     font-weight: 500;
     line-height: 1.1;
+    height:50px;
 }
 
 .text-muted {
@@ -152,6 +180,7 @@
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: 18px;
+    height: 125px;
 }
 
 .card{
@@ -185,7 +214,11 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 .thumbnail-custom{
-  max-width:100%;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body {

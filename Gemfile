@@ -57,6 +57,8 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
+gem 'gmaps4rails'
+
 gem 'ckeditor'
 gem 'paperclip'
 gem 'non-stupid-digest-assets', '~> 1.0.4'

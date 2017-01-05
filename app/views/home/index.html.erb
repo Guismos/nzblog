@@ -23,9 +23,11 @@
     <div class="card">
       <div class="card-block">
         <h4 class="card-title"><%= link_to article.title, article_path(article) %></h4>
-        <p class="card-subtitle text-muted"><%= article.created_at.strftime("%F %T") %></p>
+        <p class="card-subtitle text-muted"><%= article.created_at.strftime("%F") %></p>
       </div>
-      <%= image_tag(article.picture, class:"thumbnail-custom") %>
+      <div class="article-img">
+        <%= link_to image_tag(article.picture, class:"thumbnail-custom"), article_path(article) %>
+      </div>
       <div class="card-block">
         <p class="card-text"><%= article.description %></p>
         <%= link_to "Lire", article_path(article) %>

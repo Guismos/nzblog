@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require ckeditor/init
+//= require underscore
+//= require gmaps/google
 //= require_tree .

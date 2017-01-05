@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'maps/map'
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -9,7 +11,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-get 'talktous', to: 'comments#talktous'
+  get 'talktous', to: 'comments#talktous'
+  get 'map', to: 'maps#map'
 
 
 end

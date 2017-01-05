@@ -6,13 +6,13 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
                 <li>
-                  <%= link_to "Acceuil", root_path %>
+                  <%= link_to "Acceuil", root_path, class: cp(root_path) %>
                 </li>
                 <li>
-                    <a href="about.html">Carte</a>
+                    <%= link_to "Carte", map_path, class: cp(map_path) %>
                 </li>
                 <li>
-                  <%= link_to "Parlez-nous", talktous_path %>
+                  <%= link_to "Parlez-nous", talktous_path, class: cp(talktous_path) %>
                 </li>
             </ul>
         </div>
