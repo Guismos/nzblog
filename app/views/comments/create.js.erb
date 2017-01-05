@@ -1,0 +1,13 @@
+
+	$("#comments").prepend("<div class=\"row no-marginL no-marginR paddingL15\">"
+    +"<div class=\"col-xs-6 col-md-offset-1 comment-card\">"
+		+"<h4><%= @comment.author %>&nbsp;<small><%= @comment.created_at.strftime("%F %T") %></small></h4>"
+		+"<p class=\"comment-text\"><%= @comment.body %></p>"
+		+"</div>"
+    +"</div>");
+
+  $('#comment_author').val('');
+  $('#comment_body').val('');
+
+
+

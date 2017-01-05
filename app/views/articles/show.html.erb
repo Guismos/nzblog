@@ -1,0 +1,28 @@
+<header class="intro-header custom-header" id="intro-header">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-lg-10 col-md-10 col-md-offset-1">
+                <div class="site-heading custom-heading">
+                    <h1 class="article-title"><%= @article.title %></h1>
+                    <hr class="small">
+                    <span class="subheading "><%= @article.created_at.strftime("%F %T") %></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style media="screen">
+  #intro-header { background-image: url(<%= @article.picture %>); }
+</style>
+
+<div class="row article-body">
+	<div class="col-md-7 col-md-offset-1">
+		<%= raw(@article.body) %>
+	</div>
+    <div class="col-md-3 paddingX">
+      carte
+    </div>
+</div>
+
+<%= render 'comments/commentList', review: Comment.new(article_id: @article.id) %>

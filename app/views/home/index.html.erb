@@ -1,0 +1,35 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" id="intro-header">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Nouvelle-zélande</h1>
+                    <hr class="small">
+                    <span class="subheading">Soso & guigui à l'aventure !</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="row articleList dark-bg">
+<h1 class="articleTitle">Nos articles</h1>
+
+<% @articles.each do |article| %>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title"><%= link_to article.title, article_path(article) %></h4>
+        <p class="card-subtitle text-muted"><%= article.created_at.strftime("%F %T") %></p>
+      </div>
+      <%= image_tag(article.picture, class:"thumbnail-custom") %>
+      <div class="card-block">
+        <p class="card-text"><%= article.description %></p>
+        <%= link_to "Lire", article_path(article) %>
+      </div>
+    </div>
+  </div>
+<% end %>

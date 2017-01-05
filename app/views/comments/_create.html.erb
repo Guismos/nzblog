@@ -1,0 +1,11 @@
+<%= form_for Comment.new(), :remote => true do |f| %>
+  <div class="field">
+    <%= f.text_field :author, placeholder: "Auteur" %>
+    <%= f.text_area :body, class: "form-control custom-textarea", placeholder: "Laissez votre commentaire ici" %>
+    <%= f.hidden_field :article_id, :value => @articleId %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Commenter", class:"btn btn-default" %>
+  </div>
+<% end %>

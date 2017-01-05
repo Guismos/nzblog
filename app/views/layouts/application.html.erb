@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nzblog</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NZ blog</title>
+    <meta name="description" content="Blog for our trip in NZ">
+    <!-- BOOTSTRAP CSS 3.3.5 CDN: --> <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </main>
+     <!-- BOOTSTRAP JS 3.3.5 CDN --><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
+  </body>
+</html>
