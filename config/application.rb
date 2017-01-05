@@ -12,10 +12,12 @@ module Nzblog
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-	config.serve_static_assets = true
-config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
-config.assets.precompile += Ckeditor.assets
-config.assets.precompile += %w(ckeditor/*)
+  	config.serve_static_assets = true
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+    config.assets.precompile += Ckeditor.assets
+    config.assets.precompile += %w(ckeditor/*)
+
+    config.public_file_server.enabled = true
 
 
   end
