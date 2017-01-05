@@ -1,13 +1,19 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "NZ blog", root_path, class: "navbar-brand" %>
+    </div> <!-- end div class="navbar-header" -->
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
-                <li>
-                  <%= link_to "Acceuil", root_path, class: cp(root_path) %>
-                </li>
                 <li>
                     <%= link_to "Carte", map_path, class: cp(map_path) %>
                 </li>
