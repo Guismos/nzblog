@@ -1,7 +1,7 @@
 <%= form_for Comment.new(), :remote => true do |f| %>
   <div class="field">
+    <%= f.text_area :body, class: "form-control custom-textarea", id: "comment-textarea", placeholder: "Laissez votre commentaire ici", :required => 'contenu obligatoire' %>
     <%= f.text_field :author, placeholder: "Auteur", :required => 'auteur obligatoire' %>
-    <%= f.text_area :body, class: "form-control custom-textarea", placeholder: "Laissez votre commentaire ici", :required => 'contenu obligatoire' %>
     <%= f.hidden_field :article_id, :value => @articleId %>
   </div>
 
@@ -9,3 +9,11 @@
     <%= f.submit "Commenter", class:"btn btn-default" %>
   </div>
 <% end %>
+
+<script type='text/javascript'>
+$('#comment-textarea').keypress(function(e){
+      if(e.which == 13){
+           $(this).closest('form').submit();
+       }
+    });
+</script>
