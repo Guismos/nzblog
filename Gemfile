@@ -61,4 +61,5 @@ gem 'gmaps4rails'
 
 gem 'ckeditor'
 gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 gem 'non-stupid-digest-assets', '~> 1.0.4'
