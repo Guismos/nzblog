@@ -54,13 +54,19 @@ Rails.application.configure do
   Paperclip.options[:image_magick_path] = "/opt/ImageMagick/bin"
   Paperclip.options[:command_path] = "/opt/ImageMagick/bin"
 
+  ENV['S3_BUCKET_NAME'] = "nzblog"
+  ENV['AWS_ACCESS_KEY_ID'] = "AKIAIPAQAE65REY35CHQ"
+  ENV['AWS_SECRET_ACCESS_KEY'] = "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"
+  ENV['AWS_REGION'] = "eu-west-1"
+
   config.paperclip_defaults = {
-    storage: :s3,
-    s3_credentials: {
-      bucket: ENV.fetch('S3_BUCKET_NAME'),
-      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
-      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-      s3_region: ENV.fetch('AWS_REGION'),
+    :storage => :s3,
+    :s3_region => ENV['AWS_REGION'],
+    :s3_host_name => "s3-eu-west-1.amazonaws.com",
+    :s3_credentials => {
+      :bucket => ENV["S3_BUCKET_NAME"],
+      :access_key_id => ENV["AWS_ACCESS_KEY_ID"],
+      :secret_access_key => ENV["AWS_SECRET_ACCESS_KEY"]
     }
   }
 
