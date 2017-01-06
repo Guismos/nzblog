@@ -13,7 +13,7 @@
 </header>
 
 <style media="screen">
-  #intro-header { background-image: url(<%= @article.picture %>); }
+  #intro-header { background-image: url(<%= @article.picture.url(:large) %>); }
 </style>
 
 <div class="row article-body">
