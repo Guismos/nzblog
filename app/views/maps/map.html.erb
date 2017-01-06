@@ -22,6 +22,8 @@
       markers = handler.addMarkers(<%=raw @hash.to_json %>);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
-  handler.getMap().setZoom(6);
+    <% if @hash.size == 1 %>
+      handler.getMap().setZoom(8)
+    <% end %>
   });
 </script>
